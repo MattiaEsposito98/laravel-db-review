@@ -14,6 +14,10 @@
     <header>
         @include('partial.header')
     </header>
+
+    <main>
+        @yield('content')
+    </main>
 </body>
 
 </html>
