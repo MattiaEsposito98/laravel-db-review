@@ -15,4 +15,4 @@ Route::get('/contact', function () {
     return view('pages.contact', compact('contacts'));
 })->name('contact');
 
-// Route::resource('/posts', ClientController::class);
+Route::resource('/clients', ClientController::class);
