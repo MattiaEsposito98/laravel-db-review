@@ -17,3 +17,12 @@ ul{
     list-style: none;
 }
 
+.container {
+    width: 1024px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
