@@ -5,10 +5,12 @@
     <div class="container">
         <div class="row">
             @foreach ($clients as $client)
-                <ul>
-                    <li>Nome:{{ $client->name }} <br>
-                        Email: {{ $client->email }} <br>
-                        Posts: <ol>
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $client->name }}</h5>
+                            <p class="card-text"><strong>Email:</strong> {{ $client->email }}</p>
+                            <p class="card-text"><strong>Posts:</strong></p>
                             @if ($client->posts->isNotEmpty())
                                 <ol>
                                     @foreach ($client->posts as $post)
@@ -16,11 +18,13 @@
                                     @endforeach
                                 </ol>
                             @else
-                                <li>Nessun post correlato</li>
+                                <p>Nessun post correlato</p>
                             @endif
-                </ul>
+                            <a href="{{ route('clients.show', $client->id) }}" class="btn btn-primary">Dettagli</a>
+                        </div>
+                    </div>
+                </div>
             @endforeach
         </div>
-
     </div>
 @endsection
